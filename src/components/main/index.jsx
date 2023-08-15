@@ -1,7 +1,10 @@
 import React from 'react'
-import './index.scss'
 import { Link } from 'react-router-dom'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
 // import imgs and icons
 import siteLogo from "../../assets/icons/site-logo.svg"
 import arrowDown from "../../assets/icons/arrow_bottom.svg"
@@ -10,7 +13,21 @@ import phone from "../../assets/icons/mobile.svg"
 import web from "../../assets/icons/web.svg"
 import crm from "../../assets/icons/crm.svg"
 import bot from "../../assets/icons/bot.svg"
+import portfolioImgOne from "../../assets/images/portfolio-img-1.jpg"
+import portfolioImgTwo from "../../assets/images/portfolio-img-2.jpg"
+import portfolioImgThree from "../../assets/images/portfolio-img-3.jpg"
+import portfolioImgFour from "../../assets/images/portfolio-img-4.jpg"
+import portfolioClickImg from "../../assets/images/portfolio-click-img.jpg"
+import portfolioClickImgMini from "../../assets/images/portfolio-click-img-2.jpg"
+import axon from "../../assets/images/axon.png"
+import jetstar from "../../assets/images/jestar.png"
+import expedia from "../../assets/images/expedia.png"
+import qantas from "../../assets/images/qantas.png"
+import litaliya from "../../assets/images/litai.png"
+import componyImg from "../../assets/images/compony-logo.svg"
+import callImg from "../../assets/icons/call-img.png"
 
+import './index.scss'
 const Main = () => {
 
   const languages = ["EN", "RU", "UZ"]
@@ -25,6 +42,37 @@ const Main = () => {
     const dropdown = document.querySelector('.site-header__nav-dropdown')
     dropdown.classList.toggle('display-block')
   }
+
+  const openPortfolio = () => {
+    const card = document.querySelector(".portfolio-section__card")
+    const click = document.querySelector(".portfolio-section__click-block")
+    card.classList.toggle("display-none")
+    click.classList.toggle("display-flex")
+  }
+
+  const num = [1, 2, 3, 4, 5, 8, 4, 4, 4, 5,]
+  const tests = num.map(() => {
+    return (
+      <SwiperSlide className='test-section__item'>
+        <h3 className='test-section__item-title'>Compony name</h3>
+        <p className='test-section__item-desc'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <img
+          className='test-section__item-img'
+          src={componyImg}
+          alt="Compony icon"
+          width={61}
+          height={61}
+        />
+      </SwiperSlide>
+    )
+  })
+
+  const swiperNext = () => {
+    const swiper = document.querySelector('.swiper').swiper;
+    swiper.slideNext();
+    swiper.slidesPerView();
+  }
+
   return (
     <>
       <header className="site-header">
@@ -71,7 +119,7 @@ const Main = () => {
                   <Link className='site-header__nav-link' to="/portfolio">Portfolio</Link>
                 </li>
                 <li className='site-header__nav-item'>
-                  <Link className='site-header__nav-link' to="/achievements">Achievements</Link>
+                  <a className='site-header__nav-link' href="#achi">Achievements</a>
                 </li>
               </ul>
             </nav>
@@ -140,6 +188,9 @@ const Main = () => {
                   />
 
                   <h3 className='services-section__item-title'>Mobile app</h3>
+                  <span className='services-section__rectangle-left'></span>
+                  <span className='services-section__rectangle-center'></span>
+                  <span className='services-section__rectangle-right'></span>
                 </li>
                 <li className='services-section__item'>
                   <img
@@ -151,6 +202,9 @@ const Main = () => {
                   />
 
                   <h3 className='services-section__item-title'>Web Sayt</h3>
+                  <span className='services-section__rectangle-left'></span>
+                  <span className='services-section__rectangle-center'></span>
+                  <span className='services-section__rectangle-right'></span>
                 </li>
                 <li className='services-section__item'>
                   <img
@@ -162,6 +216,9 @@ const Main = () => {
                   />
 
                   <h3 className='services-section__item-title'>CRM</h3>
+                  <span className='services-section__rectangle-left'></span>
+                  <span className='services-section__rectangle-center'></span>
+                  <span className='services-section__rectangle-right'></span>
                 </li>
                 <li className='services-section__item'>
                   <img
@@ -173,6 +230,9 @@ const Main = () => {
                   />
 
                   <h3 className='services-section__item-title'>Telegram bot</h3>
+                  <span className='services-section__rectangle-left'></span>
+                  <span className='services-section__rectangle-center'></span>
+                  <span className='services-section__rectangle-right'></span>
                 </li>
               </ul>
             </div>
@@ -221,6 +281,158 @@ const Main = () => {
                   <span className='achi-section__item-title'>Experience</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className='portfolio-section'>
+          <div className="container">
+            <div className="portfolio-section__wrapper">
+              <h2 className='portfolio-section__title'>Portfolio</h2>
+              <div className="portfolio-section__card">
+                <div className="portfolio-section__card-start">
+                  <div className="portfolio-section__start-top">
+                    <div className="portfolio-section__top-start" onClick={() => openPortfolio()}>
+                      <img
+                        className='portfolio-section__top-start-img'
+                        src={portfolioImgOne}
+                        alt="Portfolio rasm 1"
+                        width={450}
+                        height={316}
+                      />
+                    </div>
+                    <div className="portfolio-section__top-end" onClick={() => openPortfolio()}>
+                      <img
+                        className='portfolio-section__top-end-img'
+                        src={portfolioImgTwo}
+                        alt="Portfolio rasm 2"
+                        width={289}
+                        height={316}
+                      />
+                    </div>
+                  </div>
+                  <div className="portfolio-section__start-bottom" onClick={() => openPortfolio()}>
+                    <img
+                      className='portfolio-section__start-bottom-img'
+                      src={portfolioImgThree}
+                      alt="Portfolio img 3"
+                      width={759}
+                      height={316}
+                    />
+                  </div>
+                </div>
+                <div className="portfolio-section__card-end" onClick={() => openPortfolio()}>
+                  <img
+                    className='portfolio-section__card-end-img'
+                    src={portfolioImgFour}
+                    alt="Portfolio img 4"
+                    width={349}
+                    height={652}
+                  />
+                </div>
+              </div>
+
+              <div className="portfolio-section__click-block">
+                <img
+                  className='portfolio-section__click-img'
+                  src={portfolioClickImg}
+                  alt="Portfolio click img"
+                  width={1132}
+                  height={830}
+                />
+                <div className="portfolio-section__click-flex">
+                  <p className='portfolio-section__click-desc'>Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:
+                    <br /> <br />
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:"Lorem ipsum dolor sit amet,
+                    <br /> <br />
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Description:"Lorem ipsum dolor
+                    <br />
+                    <br />
+                    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <img className='portfolio-section__click-img' src={portfolioClickImgMini} alt="" width={440} height={633} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className='clients-section'>
+          <div className="container">
+            <div className="clients-section__wrapper">
+              <h2 className='clients-section__title'>Clients</h2>
+              <ul className='clients-section__list'>
+                <li className='clients-section__item'>
+                  <img className='clients-section__item-img' src={axon} alt="Axon icon" width={130} height={130} />
+                </li>
+                <li className='clients-section__item'>
+                  <img className='clients-section__item-img' src={jetstar} alt="Jetstar icon" width={172} height={110} />
+                </li>
+                <li className='clients-section__item'>
+                  <img className='clients-section__item-img' src={expedia} alt="Expedia icon" width={241} height={86} />
+                </li>
+                <li className='clients-section__item'>
+                  <img className='clients-section__item-img' src={qantas} alt="Qantas icon" width={162} height={32} />
+                </li>
+                <li className='clients-section__item'>
+                  <img className='clients-section__item-img' src={litaliya} alt="Axon icon" width={94} height={21} />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className='ourTeam-section'>
+          <div className="container">
+            <div className="ourTeam-section__wrapper">
+              <h2 className='ourTeam-section__title'>Our Team</h2>
+              <ul className='ourTeam-section__list'>
+                <li className='ourTeam-section__item'>
+                  <h3 className='ourTeam-section__item-title'>Azizov Said</h3>
+                  <span className='ourTeam-section__item-info'>Programmer</span>
+                </li>
+                <li className='ourTeam-section__item'>
+                  <h3 className='ourTeam-section__item-title'>Azizov Said</h3>
+                  <span className='ourTeam-section__item-info'>Manager</span>
+                </li>
+                <li className='ourTeam-section__item'>
+                  <h3 className='ourTeam-section__item-title'>Azizov Said</h3>
+                  <span className='ourTeam-section__item-info'>Copy wrighter</span>
+                </li>
+                <li className='ourTeam-section__item'>
+                  <h3 className='ourTeam-section__item-title'>Azizov Said</h3>
+                  <span className='ourTeam-section__item-info'>UX/UI designer</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className='test-section'>
+          <div className="container">
+            <div className="test-section__wrapper">
+              <h2 className='test-section__title'>Testimonials</h2>
+              <Swiper
+                spaceBetween={87}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+
+              >
+                {tests}
+              </Swiper>
+            </div>
+          </div>
+        </section>
+
+        <section className='call-section'>
+          <div className="container">
+            <div className="call-section__wrapper">
+              <div className="call-section__start">
+                <img className='call-section__start-img' src={callImg} alt="" width={474} height={437} />
+              </div>
+              <div className="call-section__end">
+                  
+              </div>
             </div>
           </div>
         </section>

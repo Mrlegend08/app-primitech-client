@@ -226,6 +226,7 @@
   }
 
   &__item {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -234,12 +235,12 @@
     gap: 32px;
     background: linear-gradient(
         123.73deg,
-        rgba(255, 255, 255, 0.4) 5%,
+        rgba(77, 77, 77, 0.4) 5%,
         rgba(255, 255, 255, 0) 89.18%
       ),
       linear-gradient(
         123.55deg,
-        rgba(255, 255, 255, 0) 11.74%,
+        rgba(77, 77, 77, 0.4) 11.74%,
         rgba(255, 255, 255, 0) 87.03%
       );
     width: 546px;
@@ -255,6 +256,40 @@
     color: white;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  &__rectangle-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    max-width: 181.94px;
+    width: 100%;
+    height: 2.26px;
+    background-color: #f00;
+  }
+
+  &__rectangle-center {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    max-width: 181.94px;
+    width: 100%;
+    height: 2.26px;
+    background-color: #fff;
+  }
+
+  &__rectangle-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    max-width: 181.94px;
+    width: 100%;
+    height: 2.26px;
+    background-color: #f00;
   }
 }
 
@@ -274,6 +309,7 @@
     line-height: 88px;
     letter-spacing: 0.20000000298023224px;
     text-align: left;
+    color: white;
   }
 }
 
@@ -343,4 +379,264 @@
     text-align: left;
     color: white;
   }
+}
+
+.portfolio-section {
+  margin-bottom: 180px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 51px;
+  }
+
+  &__title {
+    font-family: Abril Fatface;
+    font-size: 36px;
+    line-height: 88px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+    margin: 0;
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__card-start {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__start-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__top-start-img {
+    cursor: pointer;
+  }
+
+  &__top-end-img {
+    cursor: pointer;
+  }
+
+  &__card-end-img {
+    cursor: pointer;
+  }
+
+  &__start-bottom-img {
+    cursor: pointer;
+  }
+
+  &__click-block {
+    margin-top: 11px;
+    display: none;
+    flex-direction: column;
+    gap: 65px;
+  }
+
+  &__click-flex {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__click-desc {
+    max-width: 651px;
+    width: 100%;
+    margin: 0;
+    font-family: Roboto Flex;
+    font-size: 14px;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+  }
+}
+
+.clients-section {
+  margin-bottom: 180px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 84px;
+  }
+
+  &__title {
+    font-family: Abril Fatface;
+    font-size: 36px;
+    line-height: 88px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.ourTeam-section {
+  margin-bottom: 180px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 58px;
+  }
+
+  &__title {
+    font-family: Abril Fatface;
+    font-size: 36px;
+    line-height: 88px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 26px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 245px 390px 21px 27px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    &:first-child {
+      background-image: url("../../assets/images/programmer.jpg");
+    }
+    &:nth-child(2) {
+      background-image: url("../../assets/images/manager.jpg");
+    }
+    &:nth-child(3) {
+      background-image: url("../../assets/images/copyRighter.jpg");
+    }
+    &:last-child {
+      background-image: url("../../assets/images/designer.jpg");
+    }
+    &:hover {
+      background-size: 110%;
+    }
+  }
+
+  &__item-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+    margin: 0;
+  }
+
+  &__item-info {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+  }
+}
+
+.test-section {
+  margin-bottom: 217px;
+  overflow-x: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+  }
+
+  &__title {
+    font-family: Abril Fatface;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 88px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+    margin: 0;
+  }
+
+  &__item {
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 255px;
+    width: 100%;
+    background-image: url("../../assets/images/test-bg.png");
+    background-repeat: no-repeat;
+    // background-size: cover;
+    padding-bottom: 26px;
+  }
+
+  &__item-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+    margin: 0;
+    padding: 13px 107px 11px 39px;
+    background: linear-gradient(0deg, #921212, #921212),
+      linear-gradient(0deg, #b22929, #b22929);
+    white-space: nowrap;
+  }
+
+  &__item-desc {
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    color: white;
+    margin: 0;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  &__item-img {
+    position: absolute;
+    top: -45%;
+    left: -35%;
+    z-index: 999;
+    transform: translate(100%, 100%);
+  }
+}
+
+.swiper{
+  overflow: visible !important;
 }

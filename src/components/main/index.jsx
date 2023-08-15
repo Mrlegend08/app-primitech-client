@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useAsyncError } from 'react-router-dom'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,6 +26,8 @@ import qantas from "../../assets/images/qantas.png"
 import litaliya from "../../assets/images/litai.png"
 import componyImg from "../../assets/images/compony-logo.svg"
 import callImg from "../../assets/icons/call-img.png"
+import mobile from "../../assets/icons/phone.svg"
+import user from "../../assets/icons/user.svg"
 
 import './index.scss'
 const Main = () => {
@@ -66,12 +68,6 @@ const Main = () => {
       </SwiperSlide>
     )
   })
-
-  const swiperNext = () => {
-    const swiper = document.querySelector('.swiper').swiper;
-    swiper.slideNext();
-    swiper.slidesPerView();
-  }
 
   return (
     <>
@@ -431,7 +427,21 @@ const Main = () => {
                 <img className='call-section__start-img' src={callImg} alt="" width={474} height={437} />
               </div>
               <div className="call-section__end">
-                  
+                <h2 className='call-section__title'>Call us to solve your problem</h2>
+                <form className='call-section__form'>
+                  <div className="call-section__form-group">
+                    <label className='call-section__form-label' htmlFor="number">Phone number</label>
+                    <input className='call-section__form-input' type="text" id='number' name='number' placeholder='Enter your phone number' required />
+                    <img className='call-section__form-img' src={mobile} alt="User icon" />
+                  </div>
+                  <div className="call-section__form-group">
+                    <label className='call-section__form-label' htmlFor="name">Enter your name</label>
+                    <input className='call-section__form-input' type="text" id='name' name='name' placeholder='Nafisa' required />
+                    <img className='call-section__form-img' src={user} alt="User icon" />
+                  </div>
+
+                  <button className='call-section__form-btn'>Confirm</button>
+                </form>
               </div>
             </div>
           </div>
